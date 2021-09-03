@@ -17,7 +17,7 @@ body{
 }
 
 .navbar .btn{
-    background: lightblue;
+    background: #6dd5ed;
     padding: 6px 20px;
     font-size: 16px;
     margin-right: 16px;
@@ -66,3 +66,56 @@ body{
       background: #2193b0;
   }
   
+
+/*------------------  card ----------------  */
+
+.posts{
+  padding: 3% 16%;
+  font-family: 'Roboto',sans-serif;
+}
+.posts img{
+
+  width: 246px;
+  height: 273px;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+.posts .card-title{
+  font-weight: 600;
+}
+.posts .card{
+  /* width: 18em; */
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.posts .btn{
+  padding: 9px 41px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #2193b0;
+  color: #fff;
+}
+
+.row{
+  margin-right: 0;
+}
+.pagination{
+  justify-content: center;
+}
+
+/* ---------------- product */
+
+
+.product{
+  padding: 4% 10%;
+  font-family: 'Ubuntu',sans-serif;
+
+}
+.product img{
+  width: inherit;
+}
+.product .col-md-6:nth-child(2){
+  text-align: left;
+}

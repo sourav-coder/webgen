@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default class Login extends Component {
+export default class Register extends Component {
   state = {
     email: "",
     password: "",
@@ -27,7 +27,7 @@ export default class Login extends Component {
     };
 
     axios({
-      url: "/authentication/login",
+      url: "/authentication/signup",
       method: "POST",
       data: payload,
     })
@@ -35,7 +35,7 @@ export default class Login extends Component {
         console.log("Success");
         console.log(res);
         if (res.data.status === "success") {
-          alert("Login Successful");
+          alert("Registration Successful");
           this.props.history.push("/");
         } else {
           if (res.data.errors.email.length) {
