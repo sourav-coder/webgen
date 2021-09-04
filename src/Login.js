@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
+const bcrypt = require('bcryptjs')
+var CryptoJS = require("crypto-js");
 
 export default class Login extends Component {
   state = {
@@ -18,6 +21,13 @@ export default class Login extends Component {
     });
   };
 
+
+
+
+
+
+
+
   submit = (event) => {
     event.preventDefault();
 
@@ -27,15 +37,30 @@ export default class Login extends Component {
     };
 
     axios({
-      url: "/authentication/login",
+      url: "https://webgen-assessment-backend.herokuapp.com/authentication/login",
       method: "POST",
       data: payload,
     })
-      .then((res) => {
+      .then(async (res) => {
         console.log("Success");
         console.log(res);
         if (res.data.status === "success") {
           alert("Login Successful");
+
+
+          // const salt = await bcrypt.genSalt(10);
+          // const userId= await bcrypt.hash(res.data.userId, salt);
+
+          // Encrypt
+          // var ciphertext = CryptoJS.AES.encrypt(res.data.userId, 'secret key 123').toString();
+
+          // Decrypt
+          // var bytes = CryptoJS.AES.decrypt(ciphertext, 'secret key 123');
+          // var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+
+          localStorage.setItem('userId',res.data.userId)
+
+          Cookies.set('jwt', res.data.jwt, { expires: 3 })
           this.props.history.push("/");
         } else {
           if (res.data.errors.email.length) {
@@ -78,9 +103,7 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
 
-          <button class="btn btn-primary">
-            Submit
-          </button>
+          <button class="btn btn-primary">Submit</button>
         </form>
       </div>
     );

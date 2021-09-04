@@ -3,21 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import Cookies from "js-cookie"
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 function Navbar(props) {
   const [search, setSearch] = React.useState("");
 
-  const history=useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const submit = async () => {
     console.log(search);
-    
 
     axios({
-      url: "/products/searchproduct",
+      url: "https://webgen-assessment-backend.herokuapp.com/products/searchproduct",
       method: "POST",
       data: { searchGiven: search },
     }).then((res) => {
@@ -27,19 +25,15 @@ function Navbar(props) {
   };
 
   const logout = () => {
-
     console.log("alert");
     axios({
-      url:"/authentication/logout",method:"POST"
-    })
-    .then((res)=>{
-      console.log(res)
+      url: "https://webgen-assessment-backend.herokuapp.com/authentication/logout",
+      method: "POST",
+    }).then((res) => {
+      console.log(res);
       props.onload();
-    })
-    
-  }
-
-
+    });
+  };
 
   return (
     <nav className="navbar bg-dark navbar-expand-lg navbar-dark">
@@ -80,7 +74,7 @@ function Navbar(props) {
               Create
             </Link>
 
-            {props.cookie===undefined ? (
+            {props.cookie === undefined ? (
               <>
                 <li class="nav-item d-flex">
                   <Link class="nav-link" to="/login">
@@ -94,12 +88,11 @@ function Navbar(props) {
                 </li>
               </>
             ) : (
-               
-                <li class="nav-item">
-                  <button class="btn" onClick={logout}>
-                    Logout
-                  </button>
-                </li>
+              <li class="nav-item">
+                <button class="btn" onClick={logout}>
+                  Logout
+                </button>
+              </li>
             )}
           </ul>
         </div>

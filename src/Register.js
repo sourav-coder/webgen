@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export default class Register extends Component {
   state = {
@@ -27,7 +28,7 @@ export default class Register extends Component {
     };
 
     axios({
-      url: "/authentication/signup",
+      url: "https://webgen-assessment-backend.herokuapp.com/authentication/signup",
       method: "POST",
       data: payload,
     })
@@ -36,6 +37,7 @@ export default class Register extends Component {
         console.log(res);
         if (res.data.status === "success") {
           alert("Registration Successful");
+          Cookies.set('jwt', res.data.jwt, { expires: 3 })
           this.props.history.push("/");
         } else {
           if (res.data.errors.email.length) {
@@ -78,9 +80,7 @@ export default class Register extends Component {
             onChange={this.handleChange}
           />
 
-          <button class="btn btn-primary">
-            Submit
-          </button>
+          <button class="btn btn-primary">Submit</button>
         </form>
       </div>
     );

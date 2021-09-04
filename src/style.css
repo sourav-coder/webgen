@@ -4,92 +4,89 @@
 /* font-family: 'Roboto', sans-serif; */
 /* font-family: 'Ubuntu', sans-serif; */
 
-body{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
 }
 
-.navbar{
-    font-family: monospace;
-    padding: 12px;
+.navbar {
+  font-family: monospace;
+  padding: 12px;
 }
 
-.navbar .btn{
-    background: #6dd5ed;
-    padding: 6px 20px;
-    font-size: 16px;
-    margin-right: 16px;
+.navbar .btn {
+  background: #6dd5ed;
+  padding: 6px 20px;
+  font-size: 16px;
+  margin-right: 16px;
 }
-
 
 /* --------- login ---------------------- */
 
-
-#login{
-
-    padding: 6% 16%;
-    font-family: monospace;
-    background: #2193b0;  /* fallback for old browsers */
-    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100vh;
-    
-  
-  }
-  #login img{
-    width: 180px;
-  }
-  #login p{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 2;
-    text-transform: uppercase;
-  }
-  #login form{
-      min-height: 420px;
-      width: 470px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      margin: auto;
-      padding: 4%;
-      background: #fff;
-      border-radius: 12px;
-  }
-  #login .btn{
-    padding: 9px 41px;
-      font-size: 15px;
-      font-weight: 600;
-      text-transform: uppercase;
-      background: #2193b0;
-  }
-  
+#login {
+  padding: 6% 16%;
+  font-family: monospace;
+  background: #2193b0; /* fallback for old browsers */
+  background: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+#login img {
+  width: 180px;
+}
+#login p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 2;
+  text-transform: uppercase;
+}
+#login form {
+  min-height: 420px;
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 4%;
+  background: #fff;
+  border-radius: 12px;
+}
+#login .btn {
+  padding: 9px 41px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #2193b0;
+}
 
 /*------------------  card ----------------  */
 
-.posts{
+.posts {
   padding: 3% 16%;
-  font-family: 'Roboto',sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-.posts img{
-
+.posts img {
   width: 246px;
   height: 273px;
   margin: auto;
   margin-top: 15px;
   border-radius: 6px;
 }
-.posts .card-title{
+.posts .card-title {
   font-weight: 600;
 }
-.posts .card{
+.posts .card {
   /* width: 18em; */
   margin-bottom: 16px;
   cursor: pointer;
 }
-.posts .btn{
+.posts .btn {
   padding: 9px 41px;
   font-size: 15px;
   font-weight: 600;
@@ -98,24 +95,29 @@ body{
   color: #fff;
 }
 
-.row{
+.row {
   margin-right: 0;
 }
-.pagination{
+.pagination {
   justify-content: center;
 }
 
 /* ---------------- product */
 
-
-.product{
-  padding: 4% 10%;
-  font-family: 'Ubuntu',sans-serif;
-
+.product {
+  padding: 8% 10%;
+  font-family: "Ubuntu", sans-serif;
 }
-.product img{
+.product img {
   width: inherit;
 }
-.product .col-md-6:nth-child(2){
+.product .col-md-6:nth-child(2) {
   text-align: left;
+}
+.product .update{
+  background: #6dd5ed;
+}
+.product .delete{
+  background: #eee;
+  box-shadow: 0 0 1px 1px #2193b0;
 }
